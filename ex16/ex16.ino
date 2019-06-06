@@ -18,11 +18,12 @@ void setup() {
   pinMode(dp, OUTPUT);
 }
 
+//for later use
 //void loop() {
- // two();
-  //delay(1000);
-  //five();
-  //delay(1000);
+//  two();
+//  delay(1000);
+//  five();
+//  delay(1000);
 //}
 
 void loop() {
