@@ -9,9 +9,9 @@ void setup() {
 
 void loop() {
   lcd.setCursor(0,0);
-  lcd.print("Arduino is best");
+  lcd.print("Happy Birthday");
 
   lcd.setCursor(0,1);
-  lcd.print("        BY SUHAS");
+  lcd.print("AMMA!!##");
 }
 
