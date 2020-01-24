@@ -1,7 +1,7 @@
 #include<LiquidCrystal.h>
 
-const int led2 = 6;
-const int ldr = A1;
+const int led2 = 13;
+const int ldr = A0;
 const int button = 7;
 const int interrupt = 2;
 
@@ -15,12 +15,17 @@ void setup() {
   Serial.begin(9600);
   analogWrite(6,20);  
   lcd.begin(16,2);
+  lcd.home();
+  lcd.setCursor(0,0);
+  lcd.print(v);
+  lcd.setCursor(0,1);
+  lcd.print(v);
   attachInterrupt(digitalPinToInterrupt(interrupt), dp, CHANGE);
 }
 
 void dp() {
   g = analogRead(button);
-  if (g == HIGH)
+  if (g = HIGH)
   {
     digitalWrite(led2, HIGH);
   }
@@ -34,10 +39,6 @@ void loop() {
   v = analogRead(ldr);
   Serial.print(v);
   delay(1000);
-  lcd.setCursor(0,0);
-  lcd.print("LDR value is: ");
-  lcd.setCursor(0,1);
-  lcd.print(v);
   
   if (v <=200) {
     for (int brightness=0; brightness<=555; brightness++)

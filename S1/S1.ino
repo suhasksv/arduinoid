@@ -1,4 +1,4 @@
-const int led = 2;
+const int led = 1;
 const int LL = A0;
 int d = 0;
 
@@ -13,7 +13,7 @@ void loop() {
   Serial.println(d);
   delay(1000);
 
-  if (d <= 200) {
+  if (d <= 300) {
     digitalWrite(led, HIGH);    
   }
   else {
