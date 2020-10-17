@@ -33,21 +33,14 @@ void setup() {
 }
 
 void loop() {
-  control();
 
-  if (button == 1) {
+  
     xdata = analogRead(vrx);  
     ydata = analogRead(vry);
 
     SendData(xdata,ydata,buttonf);
-  }
-
-  if (buttonf == 0) {
-    SendData(0,0,0);
-    delay(100);
-  }
-}
-
+  
+ 
 void SendData(int xvalue, int yvalue, int buttonstatus) {
   message = message + xvalue + "," + yvalue + "," + buttonstatus;
   mlength = message.length();
@@ -58,19 +51,5 @@ void SendData(int xvalue, int yvalue, int buttonstatus) {
   str = "";
   message = "";
   
-}
-
-void control() {
-  if ((digitalRead(button) == LOW) && (buttonf == 0)) {
-    Serial.println("started");
-    buttonf = 1;
-    delay(1000);
-  }
-  if ((digitalRead(button) == LOW) && (buttonf == 1)) {
-    Serial.println("Ended");
-    buttonf = 0;
-    delay(1000);
-  }
-  digitalWrite(button, HIGH);
 }
 
